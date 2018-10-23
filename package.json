@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode development"
+    "build": "webpack",
+    "start": "web-pack-server --open --mode development"
   },
   "author": "Neyser Zana",
   "license": "ISC",
   "dependencies": {
+    "css-loader": "^1.0.0",
+    "path": "^0.12.7",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
