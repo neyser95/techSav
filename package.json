@@ -12,9 +12,13 @@
   "author": "Neyser Zana",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
     "css-loader": "^1.0.0",
     "express": "^4.16.4",
     "express-generator": "^4.16.0",
+    "mongoose": "^5.3.6",
     "node-sass": "^4.9.4",
     "path": "^0.12.7",
     "react": "^16.5.2",

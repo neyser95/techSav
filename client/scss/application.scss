@@ -33,15 +33,16 @@ body{
 }
 
 .form-container{
-  display: inline-flex;
+  display: flex;
+  flex-flow: column;
   justify-content: center;
-  margin: 50px auto;
+  margin: 80px auto;
+  width: 60%;
   #login-form{
     display: flex;
     flex-flow: column;
     border: 1px solid black;
-    padding: 10px;
-    width: 80%;
+    padding: 20px;
     align-self: center;
     justify-content: center;
     &-header{
@@ -49,13 +50,27 @@ body{
       text-align: center;
       background-color: lightseagreen;
     }
+    &-submit{
+      background-color: rgba(32, 178, 171, 0.5);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    input{
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid rgba(0, 0, 0, 0.479);
+      border-radius: 5px;
+    }
+    input:focus{
+      outline: none;
+    }
   }
   #signup-form{
     display: flex;
     flex-flow: column;
     border: 1px solid black;
-    padding: 10px;
-    width: 80%;
+    padding: 20px;
     align-self: center;
     justify-content: center;
     &-header{
@@ -63,5 +78,23 @@ body{
       text-align: center;
       background-color: salmon;
     }
+    &-submit{
+      background-color: rgba(249, 126, 112, 0.5);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    input{
+      padding: 8px;
+      border-radius: 5px;
+      margin: 10px 0;
+      border: 1px solid rgba(0, 0, 0, 0.479);
+    }
+    input:focus{
+      outline: none;
+    }
+  }
+  label{
+    margin-top: 15px;
   }
 }

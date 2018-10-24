@@ -9,8 +9,34 @@ class App extends Component {
   constructor(props) {
     super(props),
       this.state = {
-        blogs: []
+        isLoggin: false,
+        redirectMe: false,
+        redirectUrl: '/',
+        posts: []
       }
+  }
+
+  handleSignup(e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    console.log(e.target, data);
+
+    fetch('/app/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        game: "One"
+      })
+    })
+    .then(res => {
+      console.log('This is th response:', res);
+      this.setState({ redirectMe: !this.state.redirectMe }, () => {
+        console.log(this.state);
+      });
+    })
+    .catch(err => { 'There was an error' });
   }
 
   render() {
@@ -18,10 +44,10 @@ class App extends Component {
       <div>
         <Navbar />
         <div id='body'>
-          <Switch>
+          <Switch>  
             <Route exact path='/' render={props => <HomePage {...props} />} />
             <Route path='/login' render={props => <LoginPage {...props} />} />
-            <Route path='/signup' render={props => <SignupPage {...props} />} />
+            <Route path='/signup' render={props => <SignupPage {...props} handleSignup={this.handleSignup} redirectMe={this.state.redirectMe} redirectUrl={this.state.redirectUrl} />} />
           </Switch>
         </div>
       </div>
